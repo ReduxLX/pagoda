@@ -6,7 +6,7 @@ const TopNavbar = () => {
   return (
     <TopNavbarWrapper>
       <LogoWrapper>
-        <img src={PagodaLogo} alt="logo" />
+        <img src={PagodaLogo} alt="logo" width="55px" height="55px" />
         <h1>Pagoda</h1>
       </LogoWrapper>
     </TopNavbarWrapper>
