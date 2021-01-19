@@ -8,11 +8,11 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     box-sizing: border-box;
     font-size: 16px;
-    color: white;
   }
 
   body{
-    background-color: #121212
+    background-color: #121212;
+    color: white;
   }
   
   h1{

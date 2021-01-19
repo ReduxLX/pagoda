@@ -15,8 +15,11 @@ export function* fetchWeather(action) {
         APPID,
       },
     });
-    console.log("Fetched Weather -> ", response.data);
-    yield put(actApp.handleState("weatherData", response.data));
+    if (response.data) {
+      yield put(actApp.fetchWeatherSuccess(response.data));
+    } else {
+      console.log("City not found");
+    }
   } catch (e) {
     console.log("Fetch Weather failed ->", e);
   }

@@ -2,7 +2,8 @@ import * as types from "../ActionTypes";
 
 const initialState = {
   isLoading: false,
-  weatherData: {},
+  weatherData: [],
+  queryInput: "",
 };
 
 const AppReducer = (state = initialState, { type, payload }) => {
@@ -12,6 +13,17 @@ const AppReducer = (state = initialState, { type, payload }) => {
 
     case types.APP_HANDLE_GLOBAL_STATE:
       return { ...state, ...payload };
+
+    case types.FETCH_WEATHER_SUCCESS:
+      return { ...state, weatherData: [...state.weatherData, payload] };
+
+    case types.DELETE_WEATHER:
+      return {
+        ...state,
+        weatherData: [
+          ...state.weatherData.filter((item) => payload.id !== item.id),
+        ],
+      };
 
     default:
       return state;

@@ -23,3 +23,19 @@ export const fetchWeather = (query) => {
     query,
   };
 };
+
+export const fetchWeatherSuccess = (data) => {
+  return {
+    type: types.FETCH_WEATHER_SUCCESS,
+    payload: data,
+  };
+};
+
+export const deleteWeather = (id) => {
+  return {
+    type: types.DELETE_WEATHER,
+    payload: {
+      id,
+    },
+  };
+};
